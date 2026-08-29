@@ -1,0 +1,719 @@
+Substation_A in SubStation  end 
+
+Substation_A_Net in Network  end 
+
+Grid_In in ExternalGrid  end 
+
+PL_In in PowerLine  end 
+
+CB_In in CircuitBreaker  end 
+
+BB_Main in BusBar  end 
+
+CB_T1_HV in CircuitBreaker  end 
+
+TR_T1 in Transformer  end 
+
+CB_T1_LV in CircuitBreaker  end 
+
+BB_T1_LV in BusBar  end 
+
+CB_T2_HV in CircuitBreaker  end 
+
+TR_T2 in Transformer  end 
+
+CB_T2_LV in CircuitBreaker  end 
+
+BB_T2_LV in BusBar  end 
+
+RTU_A in RTU  end 
+
+MTU_A in MTU  end 
+
+FW_A in Firewall  end 
+
+SW_A in Switch  end 
+
+RTR_A in Router  end 
+
+PL_T1_TS1 in PowerLine  end 
+
+PL_T2_TS3 in PowerLine  end 
+
+TStat_1 in SubStation  end 
+
+TStat_1_Net in Network  end 
+
+BB_TS1_In in BusBar  end 
+
+CB_TS1_In in CircuitBreaker  end 
+
+TR_TS1 in Transformer  end 
+
+CB_TS1_Out in CircuitBreaker  end 
+
+BB_TS1_Out in BusBar  end 
+
+Load_TS1 in Load  end 
+
+RTR_TS1 in Router  end 
+
+SW_TS1 in Switch  end 
+
+FW_TS1 in Firewall  end 
+
+IED_TS1 in IED  end 
+
+PL_TS1_TS2 in PowerLine  end 
+
+DL_TS1_TS2 in DataLine  end 
+
+TStat_2 in SubStation  end 
+
+TStat_2_Net in Network  end 
+
+BB_TS2_In in BusBar  end 
+
+CB_TS2_In in CircuitBreaker  end 
+
+TR_TS2 in Transformer  end 
+
+CB_TS2_Out in CircuitBreaker  end 
+
+BB_TS2_Out in BusBar  end 
+
+Load_TS2 in Load  end 
+
+RTR_TS2 in Router  end 
+
+SW_TS2 in Switch  end 
+
+FW_TS2 in Firewall  end 
+
+IED_TS2 in IED  end 
+
+TStat_3 in SubStation  end 
+
+TStat_3_Net in Network  end 
+
+BB_TS3_In in BusBar  end 
+
+CB_TS3_In in CircuitBreaker  end 
+
+TR_TS3 in Transformer  end 
+
+CB_TS3_Out in CircuitBreaker  end 
+
+BB_TS3_Out in BusBar  end 
+
+Load_TS3 in Load  end 
+
+RTR_TS3 in Router  end 
+
+SW_TS3 in Switch  end 
+
+FW_TS3 in Firewall  end 
+
+IED_TS3 in IED  end 
+
+Grid_In in ExternalGrid with 
+   powerconnection
+    pc1 : PL_In
+end 
+
+PL_In in PowerLine with 
+   powerconnection
+    pc2 : CB_In
+end 
+
+CB_In in CircuitBreaker with 
+   powerconnection
+    pc3 : BB_Main
+end 
+
+BB_Main in BusBar with 
+   powerconnection
+    pc4 : CB_T1_HV;
+    pc5 : CB_T2_HV
+end 
+
+CB_T1_HV in CircuitBreaker with 
+   powerconnection
+    pc6 : TR_T1
+end 
+
+TR_T1 in Transformer with 
+   powerconnection
+    pc7 : CB_T1_LV
+end 
+
+CB_T1_LV in CircuitBreaker with 
+   powerconnection
+    pc8 : BB_T1_LV
+end 
+
+CB_T2_HV in CircuitBreaker with 
+   powerconnection
+    pc9 : TR_T2
+end 
+
+TR_T2 in Transformer with 
+   powerconnection
+    pc10 : CB_T2_LV
+end 
+
+CB_T2_LV in CircuitBreaker with 
+   powerconnection
+    pc11 : BB_T2_LV
+end 
+
+BB_T1_LV in BusBar with 
+   powerconnection
+    pc20 : PL_T1_TS1
+end 
+
+PL_T1_TS1 in PowerLine with 
+   powerconnection
+    pc21 : BB_TS1_In
+end 
+
+BB_TS1_In in BusBar with 
+   powerconnection
+    pc22 : CB_TS1_In;
+    pc27 : PL_TS1_TS2
+end 
+
+CB_TS1_In in CircuitBreaker with 
+   powerconnection
+    pc23 : TR_TS1
+end 
+
+TR_TS1 in Transformer with 
+   powerconnection
+    pc24 : CB_TS1_Out
+end 
+
+CB_TS1_Out in CircuitBreaker with 
+   powerconnection
+    pc25 : BB_TS1_Out
+end 
+
+BB_TS1_Out in BusBar with 
+   powerconnection
+    pc26 : Load_TS1
+end 
+
+PL_TS1_TS2 in PowerLine with 
+   powerconnection
+    pc30 : BB_TS2_In
+end 
+
+BB_TS2_In in BusBar with 
+   powerconnection
+    pc31 : CB_TS2_In
+end 
+
+CB_TS2_In in CircuitBreaker with 
+   powerconnection
+    pc32 : TR_TS2
+end 
+
+TR_TS2 in Transformer with 
+   powerconnection
+    pc33 : CB_TS2_Out
+end 
+
+CB_TS2_Out in CircuitBreaker with 
+   powerconnection
+    pc34 : BB_TS2_Out
+end 
+
+BB_TS2_Out in BusBar with 
+   powerconnection
+    pc35 : Load_TS2
+end 
+
+BB_T2_LV in BusBar with 
+   powerconnection
+    pc40 : PL_T2_TS3
+end 
+
+PL_T2_TS3 in PowerLine with 
+   powerconnection
+    pc41 : BB_TS3_In
+end 
+
+BB_TS3_In in BusBar with 
+   powerconnection
+    pc42 : CB_TS3_In
+end 
+
+CB_TS3_In in CircuitBreaker with 
+   powerconnection
+    pc43 : TR_TS3
+end 
+
+TR_TS3 in Transformer with 
+   powerconnection
+    pc44 : CB_TS3_Out
+end 
+
+CB_TS3_Out in CircuitBreaker with 
+   powerconnection
+    pc45 : BB_TS3_Out
+end 
+
+BB_TS3_Out in BusBar with 
+   powerconnection
+    pc46 : Load_TS3
+end 
+
+Substation_A in SubStation with 
+   subcomponent
+    s2 : PL_In;
+    s3 : CB_In;
+    s4 : BB_Main;
+    s5 : CB_T1_HV;
+    s6 : TR_T1;
+    s7 : CB_T1_LV;
+    s8 : BB_T1_LV;
+    s9 : CB_T2_HV;
+    s10 : TR_T2;
+    s11 : CB_T2_LV;
+    s12 : BB_T2_LV;
+    s13 : PL_T1_TS1;
+    s14 : PL_T2_TS3;
+    s15 : RTU_A;
+    s16 : MTU_A;
+    s17 : Substation_A_Net
+end 
+
+Substation_A_Net in Network with 
+   subcomponent
+    n1 : RTR_A;
+    n2 : FW_A;
+    n3 : SW_A;
+    n4 : MTU_A;
+    n5 : RTU_A
+end 
+
+TStat_1 in SubStation with 
+   subcomponent
+    s1 : BB_TS1_In;
+    s2 : CB_TS1_In;
+    s3 : TR_TS1;
+    s4 : CB_TS1_Out;
+    s5 : BB_TS1_Out;
+    s6 : Load_TS1;
+    s7 : PL_TS1_TS2;
+    s8 : TStat_1_Net
+end 
+
+TStat_1_Net in Network with 
+   subcomponent
+    n1 : RTR_TS1;
+    n2 : FW_TS1;
+    n3 : SW_TS1;
+    n4 : IED_TS1
+end 
+
+TStat_2 in SubStation with 
+   subcomponent
+    s1 : BB_TS2_In;
+    s2 : CB_TS2_In;
+    s3 : TR_TS2;
+    s4 : CB_TS2_Out;
+    s5 : BB_TS2_Out;
+    s6 : Load_TS2;
+    s7 : TStat_2_Net
+end 
+
+TStat_2_Net in Network with 
+   subcomponent
+    n1 : RTR_TS2;
+    n2 : FW_TS2;
+    n3 : SW_TS2;
+    n4 : IED_TS2
+end 
+
+TStat_3 in SubStation with 
+   subcomponent
+    s1 : BB_TS3_In;
+    s2 : CB_TS3_In;
+    s3 : TR_TS3;
+    s4 : CB_TS3_Out;
+    s5 : BB_TS3_Out;
+    s6 : Load_TS3;
+    s7 : TStat_3_Net
+end 
+
+TStat_3_Net in Network with 
+   subcomponent
+    n1 : RTR_TS3;
+    n2 : FW_TS3;
+    n3 : SW_TS3;
+    n4 : IED_TS3
+end 
+
+DL_Sub_TS1 in DataLine  end 
+
+DL_Sub_TS3 in DataLine  end 
+
+DL_CC_Sub in DataLine  end 
+
+MTU_A in MTU with 
+   dataconnection
+    dc1 : SW_A
+end 
+
+RTU_A in RTU with 
+   dataconnection
+    dc2 : SW_A;
+    dc3 : CB_In;
+    dc4 : CB_T1_HV;
+    dc5 : TR_T1;
+    dc6 : CB_T1_LV;
+    dc7 : CB_T2_HV;
+    dc8 : TR_T2;
+    dc9 : CB_T2_LV
+end 
+
+SW_A in Switch with 
+   dataconnection
+    dc10 : FW_A
+end 
+
+FW_A in Firewall with 
+   dataconnection
+    dc11 : RTR_A
+end 
+
+RTR_A in Router with 
+   dataconnection
+    dc12 : DL_Sub_TS1;
+    dc13 : DL_Sub_TS3;
+    dc14 : DL_CC_Sub
+end 
+
+DL_Sub_TS1 in DataLine with 
+   dataconnection
+    dc15 : RTR_TS1
+end 
+
+DL_Sub_TS3 in DataLine with 
+   dataconnection
+    dc16 : RTR_TS3
+end 
+
+RTR_TS1 in Router with 
+   dataconnection
+    dc17 : FW_TS1;
+    dc18 : DL_TS1_TS2
+end 
+
+FW_TS1 in Firewall with 
+   dataconnection
+    dc19 : SW_TS1
+end 
+
+SW_TS1 in Switch with 
+   dataconnection
+    dc20 : IED_TS1
+end 
+
+IED_TS1 in IED with 
+   dataconnection
+    dc21 : CB_TS1_In;
+    dc22 : CB_TS1_Out;
+    dc23 : TR_TS1
+end 
+
+DL_TS1_TS2 in DataLine with 
+   dataconnection
+    dc24 : RTR_TS2
+end 
+
+RTR_TS2 in Router with 
+   dataconnection
+    dc25 : FW_TS2
+end 
+
+FW_TS2 in Firewall with 
+   dataconnection
+    dc26 : SW_TS2
+end 
+
+SW_TS2 in Switch with 
+   dataconnection
+    dc27 : IED_TS2
+end 
+
+IED_TS2 in IED with 
+   dataconnection
+    dc28 : CB_TS2_In;
+    dc29 : CB_TS2_Out;
+    dc30 : TR_TS2
+end 
+
+RTR_TS3 in Router with 
+   dataconnection
+    dc31 : FW_TS3
+end 
+
+FW_TS3 in Firewall with 
+   dataconnection
+    dc32 : SW_TS3
+end 
+
+SW_TS3 in Switch with 
+   dataconnection
+    dc33 : IED_TS3
+end 
+
+IED_TS3 in IED with 
+   dataconnection
+    dc34 : CB_TS3_In;
+    dc35 : CB_TS3_Out;
+    dc36 : TR_TS3
+end 
+
+ControlCenter_Net in Network  end 
+
+DMZ_Net in Network  end 
+
+CC_Router in Router  end 
+
+CC_FW in Firewall  end 
+
+CC_SW in Switch  end 
+
+DMZ_SW in Switch  end 
+
+SCADA_PC in Computer  end 
+
+Historian_PC in Computer  end 
+
+ControlCenter_Net in Network with 
+   subcomponent
+    n1 : CC_Router;
+    n2 : CC_FW;
+    n3 : CC_SW;
+    n4 : SCADA_PC
+end 
+
+DMZ_Net in Network with 
+   subcomponent
+    n1 : DMZ_SW;
+    n2 : Historian_PC
+end 
+
+SCADA_PC in Computer with 
+   dataconnection
+    dc40 : CC_SW
+end 
+
+CC_SW in Switch with 
+   dataconnection
+    dc41 : CC_FW
+end 
+
+CC_FW in Firewall with 
+   dataconnection
+    dc42 : CC_Router;
+    dc43 : DMZ_SW
+end 
+
+DMZ_SW in Switch with 
+   dataconnection
+    dc44 : Historian_PC
+end 
+
+CC_Router in Router with 
+   dataconnection
+    dc45 : DL_CC_Sub
+end 
+
+SCADA_Frontend in ClientSoftware  end 
+
+SCADA_Server_App in ServerSoftware  end 
+
+Historian_Client in ClientSoftware  end 
+
+MTU_Client in ClientSoftware  end 
+
+MTU_Service in ServerSoftware  end 
+
+RTU_Client in ClientSoftware  end 
+
+RTU_Service in ServerSoftware  end 
+
+IED_TS1_Service in ServerSoftware  end 
+
+IED_TS1_ReportClient in ClientSoftware  end 
+
+IED_TS2_Service in ServerSoftware  end 
+
+IED_TS2_ReportClient in ClientSoftware  end 
+
+IED_TS3_Service in ServerSoftware  end 
+
+IED_TS3_ReportClient in ClientSoftware  end 
+
+SCADA_PC in Computer with 
+   subcomponent
+    s1 : SCADA_Frontend;
+    s2 : SCADA_Server_App
+end 
+
+Historian_PC in Computer with 
+   subcomponent
+    s1 : Historian_Client
+end 
+
+MTU_A in MTU with 
+   subcomponent
+    s1 : MTU_Client;
+    s2 : MTU_Service
+end 
+
+RTU_A in RTU with 
+   subcomponent
+    s1 : RTU_Client;
+    s2 : RTU_Service
+end 
+
+IED_TS1 in IED with 
+   subcomponent
+    s1 : IED_TS1_Service;
+    s2 : IED_TS1_ReportClient
+end 
+
+IED_TS2 in IED with 
+   subcomponent
+    s1 : IED_TS2_Service;
+    s2 : IED_TS2_ReportClient
+end 
+
+IED_TS3 in IED with 
+   subcomponent
+    s1 : IED_TS3_Service;
+    s2 : IED_TS3_ReportClient
+end 
+
+
+Historian_App in ServerSoftware  end 
+
+
+Historian_PC in Computer with 
+   subcomponent
+    s2 : Historian_App
+end 
+
+
+DS_SCADA_MTU in UnidirectionalDataStream with 
+   sender
+    s1 : SCADA_Frontend
+  receiver
+    r1 : MTU_Service
+end 
+
+DS_MTU_SCADA in UnidirectionalDataStream with 
+   sender
+    s1 : MTU_Client
+  receiver
+    r1 : SCADA_Server_App
+end 
+
+DS_HIST_SCADA in UnidirectionalDataStream with 
+   sender
+    s1 : Historian_Client
+  receiver
+    r1 : SCADA_Server_App
+end 
+
+DS_MTU_RTU in UnidirectionalDataStream with 
+   sender
+    s1 : MTU_Client
+  receiver
+    r1 : RTU_Service
+end 
+
+DS_RTU_IED1 in UnidirectionalDataStream with 
+   sender
+    s1 : RTU_Client
+  receiver
+    r1 : IED_TS1_Service
+end 
+
+DS_RTU_IED2 in UnidirectionalDataStream with 
+   sender
+    s1 : RTU_Client
+  receiver
+    r1 : IED_TS2_Service
+end 
+
+DS_RTU_IED3 in UnidirectionalDataStream with 
+   sender
+    s1 : RTU_Client
+  receiver
+    r1 : IED_TS3_Service
+end 
+
+DS_IED1_MTU in UnidirectionalDataStream with 
+   sender
+    s1 : IED_TS1_ReportClient
+  receiver
+    r1 : MTU_Service
+end 
+
+DS_IED2_MTU in UnidirectionalDataStream with 
+   sender
+    s1 : IED_TS2_ReportClient
+  receiver
+    r1 : MTU_Service
+end 
+
+DS_IED3_MTU in UnidirectionalDataStream with 
+   sender
+    s1 : IED_TS3_ReportClient
+  receiver
+    r1 : MTU_Service
+end 
+
+DS_FE_SERVER in UnidirectionalDataStream with 
+   sender
+    s1 : SCADA_Frontend
+  receiver
+    r1 : SCADA_Server_App
+end 
+
+
+DS_MTU_IED1 in UnidirectionalDataStream with 
+   sender
+    s1 : MTU_Client
+  receiver
+    r1 : IED_TS1_Service
+end 
+
+DS_MTU_IED2 in UnidirectionalDataStream with 
+   sender
+    s1 : MTU_Client
+  receiver
+    r1 : IED_TS2_Service
+end 
+
+DS_MTU_IED3 in UnidirectionalDataStream with 
+   sender
+    s1 : MTU_Client
+  receiver
+    r1 : IED_TS3_Service
+end 
+
+
+DS_SCADA_HIST in UnidirectionalDataStream with 
+   sender
+    s1 : SCADA_Server_App
+  receiver
+    r1 : Historian_App
+end 
+
